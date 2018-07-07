@@ -46,6 +46,7 @@ namespace DeckHub.Shows.Messaging
             {
                 _logger.LogError("Invalid ShowSlide message received");
                 await _queueClient.CompleteAsync(lockToken).ConfigureAwait(false);
+                return;
             }
 
             try
